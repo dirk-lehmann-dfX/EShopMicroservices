@@ -1,5 +1,3 @@
-using BuildingBlocks.Behaviors;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,14 +15,42 @@ builder.Services.AddCarter();
 builder.Services.AddMarten(options =>
 {
     options.Connection(builder.Configuration.GetConnectionString("PostGresDatabase")!);
-    //options.AutoCreateSchemaObjects = Weasel.Core.AutoCreate.All;
-    //options.DatabaseSchemaName = "catalog"; 
-    //options.RegisterDocumentType<Domain.Entities.CatalogItem>();
 }).UseLightweightSessions();
+
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.MapCarter();
+
+app.UseExceptionHandler(optins => { });
+
+//app.UseExceptionHandler(exceptionHandler =>
+//{
+//    exceptionHandler.Run(async context =>
+//    {
+//        var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+//        if (exception == null)
+//        {
+//            return;
+//        }
+
+//        var problemDetails = new ProblemDetails
+//        {
+//            Status = StatusCodes.Status500InternalServerError,
+//            Title = exception.Message,
+//            Detail = exception.StackTrace
+//        };
+
+//        var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+//        logger.LogError(exception, exception.Message);
+
+//        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+//        context.Response.ContentType = "application/problem+json";
+
+//        await context.Response.WriteAsJsonAsync(problemDetails);
+//    });
+//});
 
 app.Run();
