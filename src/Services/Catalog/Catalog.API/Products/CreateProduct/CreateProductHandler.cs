@@ -17,8 +17,8 @@
     }
 
     // IValidator<CreateProductCommand> ersetzt durch ValidationBehavior<,>
-    internal class CreateProductCommandHandler(IDocumentSession documentSession/*, IValidator<CreateProductCommand> validator*/,
-        ILogger<CreateProductCommandHandler> logger)
+    internal class CreateProductCommandHandler(IDocumentSession documentSession/*, IValidator<CreateProductCommand> validator*/ /*,
+        ILogger<CreateProductCommandHandler> logger*/)
         : ICommandHandler<CreateProductCommand, CreateProductResult>
     {
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
@@ -31,7 +31,8 @@
             //    throw new ValidationException(errors.FirstOrDefault());
             //}
 
-            logger.LogInformation("CreateProductCommandHandler.Handle called with {@Command}", command);
+            // ehem. Logging, läuft nun über LoggingBehavior
+            //logger.LogInformation("CreateProductCommandHandler.Handle called with {@Command}", command);
 
             // Business logic to create a product
             var productToCreate = new Product
