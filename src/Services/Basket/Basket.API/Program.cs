@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddCarter();
+
 var assembly = typeof(Program).Assembly;
 builder.Services.AddMediatR(
     config =>
@@ -10,6 +11,12 @@ builder.Services.AddMediatR(
         config.AddOpenBehavior(typeof(ValidationBehavior<,>));
         config.AddOpenBehavior(typeof(LoggingBehavior<,>));
     });
+
+builder.Services.AddMarten(options =>
+{
+    options.Connection(builder.Configuration.GetConnectionString("PostGresDatabase")!);
+    options.Schema.For<ShoppingCart>().Identity(shoppingCart => shoppingCart.UserName);
+}).UseLightweightSessions();
 
 
 var app = builder.Build();
