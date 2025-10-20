@@ -1,9 +1,12 @@
+using Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
+
+// 1) Application Services
 builder.Services.AddCarter();
 
 var assembly = typeof(Program).Assembly;
@@ -15,6 +18,7 @@ builder.Services.AddMediatR(
         config.AddOpenBehavior(typeof(LoggingBehavior<,>));
     });
 
+// 2) Data Services
 builder.Services.AddMarten(options =>
 {
     options.Connection(builder.Configuration.GetConnectionString("PostGresDatabase")!);
@@ -36,6 +40,13 @@ builder.Services.AddStackExchangeRedisCache(options =>
 
 });
 
+// 3) Grpc Services
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options => 
+{
+    options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+});
+
+// 4) Cross-Cutting Services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 builder.Services.AddHealthChecks()
