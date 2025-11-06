@@ -2,13 +2,13 @@
 
 internal class InitialData
 {
-    private static Guid _customerId1 = Guid.NewGuid();
-    private static Guid _customerId2 = Guid.NewGuid();
+    private static Guid _customerId1 = new Guid("B0A8BFE0-DC20-43A0-88F6-0E459ABA3C14");
+    private static Guid _customerId2 = new Guid("44464351-C089-4D08-8352-8BE811228A72");
 
-    private static Guid _product1 = Guid.NewGuid();
-    private static Guid _product2 = Guid.NewGuid();
-    private static Guid _product3 = Guid.NewGuid();
-    private static Guid _product4 = Guid.NewGuid();
+    private static Guid _product1 = new Guid("7AE46A2C-2237-4B9A-8D9A-9C311A2E6712");
+    private static Guid _product2 = new Guid("579BCB1E-8471-4E82-A88D-B96989F82E67");
+    private static Guid _product3 = new Guid("3901B778-ED4D-4781-8254-FCB07982FF5E");
+    private static Guid _product4 = new Guid("E43DA995-A8A2-418B-A178-86E195D28A0E");
 
     public static IEnumerable<Customer> Customers =>
         new List<Customer>
