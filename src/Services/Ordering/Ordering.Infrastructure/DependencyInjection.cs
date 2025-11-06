@@ -12,6 +12,7 @@ public static class DependencyInjection
         // Add infrastructure services registrations here
         services.AddDbContext<ApplicationDbContext>(options =>
         {
+            options.AddInterceptors(new AuditableEntityInterceptor());
             options.UseSqlServer(connectionString);
         });
         //services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
