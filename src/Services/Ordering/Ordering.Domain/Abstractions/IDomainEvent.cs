@@ -4,7 +4,7 @@ namespace Ordering.Domain.Abstractions;
 
 public interface IDomainEvent : INotification
 {
-    Guid ÊventId => Guid.NewGuid();
+    Guid EventId => Guid.NewGuid();
 
     public DateTime OccurredOn => DateTime.Now;
 
