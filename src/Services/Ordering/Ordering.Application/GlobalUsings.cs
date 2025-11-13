@@ -1,4 +1,5 @@
 ﻿global using BuildingBlocks.CQRS;
+global using BuildingBlocks.Pagination;
 global using MediatR;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.Logging;
