@@ -30,7 +30,7 @@ internal class InitialData
     {
         get
         {
-            var address1 = Address.Of("mehmet", "ozkaya", "mehmet@gmail.com", "Bahcelievler No:4", "Turjey", "Istanbul", "38050");
+            var address1 = Address.Of("mehmet", "ozkaya", "mehmet@gmail.com", "Bahcelievler No:4", "Turkey", "Istanbul", "38050");
             var address2 = Address.Of("john", "doe", "john@gmail.com", "Broadway No:1", "England", "Nottingham", "08050");
 
             var payment1 = Payment.Of("mehmet", "55555555555555544", "12/25", "123", 1);

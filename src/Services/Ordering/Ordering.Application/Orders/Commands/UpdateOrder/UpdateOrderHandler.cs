@@ -46,7 +46,7 @@ public class UpdateOrderHandler(IApplicationDbContext dbContext)
             orderDto.Payment.CardNumber,
             orderDto.Payment.Expiration,
             orderDto.Payment.Cvv,
-            orderDto.Payment.PaymentMethode);
+            orderDto.Payment.PaymentMethod);
 
         order.Update(
             orderName: OrderName.Of(orderDto.OrderName),

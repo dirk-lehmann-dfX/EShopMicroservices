@@ -43,7 +43,7 @@ public class CreateOrderHandler(IApplicationDbContext dbContext)
                 orderDto.Payment.CardNumber, 
                 orderDto.Payment.Expiration, 
                 orderDto.Payment.Cvv, 
-                orderDto.Payment.PaymentMethode));
+                orderDto.Payment.PaymentMethod));
 
         foreach (var orderItemDto in orderDto.OrderItems)
         {
