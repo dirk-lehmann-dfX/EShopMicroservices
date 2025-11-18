@@ -20,7 +20,7 @@ public class UpdateOrder
         {
             var command = request.Adapt<UpdateOrderCommand>();
             var result = await sender.Send(command);
-            var response = request.Adapt<UpdateOrderResponse>();
+            var response = result.Adapt<UpdateOrderResponse>();
 
             return Results.Ok(response);
         })
