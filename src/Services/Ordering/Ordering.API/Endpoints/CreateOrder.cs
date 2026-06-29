@@ -18,12 +18,13 @@ public class CreateOrder
     {
         app.MapPost("/orders", async (CreateOrderRequest request, ISender sender) =>
         {
-            //Maps the request to a CreateOrderCommand
+            //Maps the CreateOrderRequest to a CreateOrderCommand
             var command = request.Adapt<CreateOrderCommand>();
 
             //Use MediatR to send the command to the corresponding handler
             var result = await sender.Send(command);
 
+            //Maps the CreateOrderResult to a CreateOrderResponse
             var response = result.Adapt<CreateOrderResponse>();
 
             return Results.Created($"/orders/{response.Id}", response);

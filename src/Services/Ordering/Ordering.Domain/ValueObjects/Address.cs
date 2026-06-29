@@ -1,5 +1,6 @@
 ﻿namespace Ordering.Domain.ValueObjects;
 
+// Value object => record
 public record Address
 {
     public string FirstName { get; } = default!;

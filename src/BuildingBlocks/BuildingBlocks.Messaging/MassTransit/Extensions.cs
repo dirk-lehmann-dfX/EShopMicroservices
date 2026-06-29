@@ -15,6 +15,7 @@ public static class Extensions
         {
             config.SetKebabCaseEndpointNameFormatter();
 
+            // Für den OrderService (consumer), nicht für den BasketService (publisher)
             if (assembly != null)
             {
                 config.AddConsumers(assembly);

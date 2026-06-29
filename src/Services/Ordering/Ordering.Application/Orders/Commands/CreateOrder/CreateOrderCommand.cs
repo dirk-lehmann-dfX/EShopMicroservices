@@ -20,7 +20,7 @@ public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
             .WithMessage("CustomerId is required.");
 
         RuleFor(x => x.Order.OrderItems)
-            .NotNull()
+            .NotEmpty()
             .WithMessage("OrderItems should not be empty.");
     }
 }

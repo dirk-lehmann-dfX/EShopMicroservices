@@ -23,7 +23,7 @@ public class GetOrdersByCustomer
             return Results.Ok(response);
         })
             .WithName("GetOrdersByCustomer")
-            .Produces<GetOrdersByNameResponse>(StatusCodes.Status200OK)
+            .Produces<GetOrdersByCustomerResponse>(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status404NotFound)
             .WithSummary("Get Orders By Customer")

@@ -58,7 +58,7 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
     });
 
 // Async Communication Services
-// OHNE assembly, da publisher und nicht consumer
+// OHNE assembly-Parameter, da publisher und nicht consumer
 builder.Services.AddMessageBroker(builder.Configuration);
 
 // 4) Cross-Cutting Services
