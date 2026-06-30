@@ -12,7 +12,7 @@ public class CheckoutBasketEndpoint : ICarterModule
         {
             var command = request.Adapt<CheckoutBasketCommand>();
 
-            var result = sender.Send(command);
+            var result = await sender.Send(command);
 
             var response = result.Adapt<CheckoutBasketResponse>();
 
