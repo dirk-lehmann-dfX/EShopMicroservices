@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22
+# Visual Studio Version 18
+VisualStudioVersion = 18.7.11919.86 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -34,6 +34,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Infrastructure", "Services\Ordering\Ordering.Infrastructure\Ordering.Infrastructure.csproj", "{1FB77000-04DB-4F0D-B003-C84159190B60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Messaging", "BuildingBlocks\BuildingBlocks.Messaging\BuildingBlocks.Messaging.csproj", "{046193E1-447E-4E45-8921-AF2CDEB209FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{45548FBD-06F2-4C03-B89D-33B4D1A14FA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpApiGateway", "ApiGateway\YarpApiGateway\YarpApiGateway.csproj", "{21CFB432-2A19-42DF-AEF2-EF00B8F7C821}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,10 @@ Global
 		{046193E1-447E-4E45-8921-AF2CDEB209FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{046193E1-447E-4E45-8921-AF2CDEB209FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{046193E1-447E-4E45-8921-AF2CDEB209FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21CFB432-2A19-42DF-AEF2-EF00B8F7C821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21CFB432-2A19-42DF-AEF2-EF00B8F7C821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21CFB432-2A19-42DF-AEF2-EF00B8F7C821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21CFB432-2A19-42DF-AEF2-EF00B8F7C821}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +107,7 @@ Global
 		{15007A9C-5734-4046-B45A-7524EE4DC212} = {B0073E33-1310-484F-BBED-13F333D8A570}
 		{1FB77000-04DB-4F0D-B003-C84159190B60} = {B0073E33-1310-484F-BBED-13F333D8A570}
 		{046193E1-447E-4E45-8921-AF2CDEB209FE} = {2F8AE5B7-FEAA-4E52-A574-3CF76964F57A}
+		{21CFB432-2A19-42DF-AEF2-EF00B8F7C821} = {45548FBD-06F2-4C03-B89D-33B4D1A14FA8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F70308EC-2BB5-4E23-A3F2-A830F97ECC6F}
